@@ -26,7 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install --js-yaml
-const yaml = require('js-yaml'); //initialize js-yaml
+const yaml = require('js-yaml');
+
+const fs = require('fs');
 
 try {
   const result = yaml.load(fs.readFileSync('example.yml', 'utf8'));
